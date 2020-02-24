@@ -1,8 +1,5 @@
 - table:
     schema: public
-    name: products
-- table:
-    schema: public
     name: Album
   object_relationships:
   - name: Artist
@@ -162,4 +159,16 @@
           name: PlaylistTrack
 - table:
     schema: public
+    name: products
+- table:
+    schema: public
     name: test
+  object_relationships:
+  - name: product
+    using:
+      manual_configuration:
+        remote_table:
+          schema: public
+          name: products
+        column_mapping:
+          text: name
